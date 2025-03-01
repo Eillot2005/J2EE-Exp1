@@ -1,0 +1,163 @@
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 修复：调整介绍文字样式，保证不被遮挡 */
+.intro-text {
+    text-align: center;
+    margin-bottom: 60px; /* 增加底部间距，避免被3D相册遮挡 */
+    font-size: 16px;
+    color: #555;
+}
+
+/* 3D旋转相册核心样式 - 修复悬停问题 */
+.photo-gallery {
+    perspective: 1200px; /* 增加透视深度 */
+    margin: 70px auto; /* 增加上下边距 */
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+.photo-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotation 20s infinite linear;/* 修复：增加旋转动画，使相册自动旋转，30s一圈 */
+}
+
+.photo-container:hover {
+    animation-play-state: paused;
+}
+
+/* 修改图片项样式，固定放大效果和过渡 */
+.photo-item {
+    position: absolute;
+    width: 280px; /* 稍微减小宽度，避免重叠 */
+    height: 180px; /* 稍微减小高度，避免重叠 */
+    left: 10px; /* 居中调整 */
+    top: 10px; /* 居中调整 */
+    overflow: hidden;
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden; /* 防止背面可见 */
+    /* 重要：固定变换顺序和原点 */
+    transform-origin: center center;
+}
+
+/* 修改悬停效果，仅添加阴影和显示说明，不再添加变换 */
+.photo-item:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    /* 移除会导致乱动的缩放和Z轴位移 */
+}
+
+/* 为caption添加单独的效果，不影响整个卡片位置 */
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 10; /* 确保在最上层 */
+    pointer-events: none; /* 防止触发额外事件 */
+}
+
+.photo-item:hover .photo-caption {
+    transform: translateY(0);
+}
+
+@keyframes rotation {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* 其他页面样式 */
+.video-section {
+    margin: 60px 0 40px; /* 增加与上方相册的间距 */
+}
+
+.video-container {
+    position: relative;/* 修复：相对定位 */
+    padding-bottom: 56.25%;/* 修复：16:9比例 */
+    height: 0;
+    overflow: hidden;/* 修复：隐藏溢出内容 */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.video-container video {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    border-radius: 10px;
+}
+
+.back-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    width: 100px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+.back-button:hover {
+    background: #45a049;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 40px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+}

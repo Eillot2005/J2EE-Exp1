@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 确保 main.js 正确引入 -->
+    <script src="../js/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>我的个人网站</h1>
+        <div class="user-info">
+            欢迎，<span id="currentUser"></span>
+            <button class="logout" onclick="logout()">退出登录</button>
+        </div>
+    </header>
+    <div class="page-wrapper">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <!-- 个人资料卡片 -->
+            <div class="profile-card">
+                <img src="../images/shanyi.jpg" alt="个人头像" class="avatar">
+                <h3 class="profile-name">刘逸潇</h3>
+                <p class="profile-bio">计算机科学与技术专业学生，热爱编程与设计</p>
+                <div class="social-links">
+                    <!-- 修改：添加正确的链接和目标属性 -->
+                    <a href="https://github.com/" class="social-icon" target="_blank" title="访问我的GitHub"><i class="fab fa-github"></i></a>
+                    <a href="javascript:void(0);" onclick="alert('他的微信号：2711217191');" class="social-icon" title="查看微信号"><i class="fab fa-weixin"></i></a>
+                    <a href="javascript:void(0);" onclick="alert('他的QQ号：2711217191');" class="social-icon" title="查看QQ号"><i class="fab fa-qq"></i></a>
+                    <a href="https://www.zhihu.com/" class="social-icon" target="_blank" title="访问我的知乎"><i class="fab fa-zhihu"></i></a>
+                </div>
+            </div>
+            
+            <!-- 统计卡片 -->
+            <div class="stats-card">
+                <h3 class="stats-heading">学习进度</h3>
+                <div class="stats-item">
+                    <div class="stats-icon"><i class="fas fa-code"></i></div>
+                    <div class="stats-text">编程技能：<span class="stats-value">55%</span></div>
+                </div>
+                <div class="stats-item">
+                    <div class="stats-icon"><i class="fas fa-book"></i></div>
+                    <div class="stats-text">课程学习：<span class="stats-value">62%</span></div>
+                </div>
+                <div class="stats-item">
+                    <div class="stats-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stats-text">项目完成：<span class="stats-value">1/10</span></div>
+                </div>
+            </div>
+            
+            <!-- 删除快速链接部分 -->
+        </aside>
+        
+        <!-- 右侧主内容区 -->
+        <main class="main-content">
+            <div class="welcome-section">
+                <h2>欢迎来到我的个人空间</h2>
+                <p>这里展示了我的生活、学习和理想，希望能让您更好地了解我。</p>
+                <p>点击下方卡片，探索更多内容！</p>
+            </div>
+            
+            <div class="container">
+                <div class="box">
+                    <img src="../images/shanyi.jpg" alt="个人简历">
+                    <div class="box-content">
+                        <h2>个人简历</h2>
+                        <p>了解我的教育背景和专业技能</p>
+                    </div>
+                    <a href="resume.html" class="box-link" aria-label="查看个人简历"></a>
+                </div>
+                
+                <div class="box">
+                    <img src="../images/city.jpg" alt="我的理想">
+                    <div class="box-content">
+                        <h2>我的理想</h2>
+                        <p>探索我未来的目标和梦想</p>
+                    </div>
+                    <a href="dream.html" class="box-link" aria-label="查看我的理想"></a>
+                </div>
+                
+                <div class="box">
+                    <img src="../images/me2.jpg" alt="我的生活">
+                    <div class="box-content">
+                        <h2>我的生活</h2>
+                        <p>分享我的日常生活和照片故事</p>
+                    </div>
+                    <a href="life.html" class="box-link" aria-label="查看我的生活"></a>
+                </div>
+                
+                <div class="box">
+                    <img src="../images/xueshan.jpg" alt="学习内容">
+                    <div class="box-content">
+                        <h2>学习内容</h2>
+                        <p>展示我正在学习的课程和项目</p>
+                    </div>
+                    <a href="study.html" class="box-link" aria-label="查看学习内容"></a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 调试信息
+        console.log("main.html 页面加载");
+        
+        // 检查全局函数是否存在
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM加载完成");
+            console.log("logout函数存在:", typeof window.logout === "function");
+            console.log("用户登录状态:", localStorage.getItem('isLoggedIn'));
+
+            // 直接绑定退出按钮事件，确保可用
+            const logoutBtn = document.querySelector('.logout');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    console.log("退出按钮被点击");
+                    // 清除登录状态
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('username');
+                    // 提示用户已退出
+                    alert('您已成功退出登录');
+                    // 跳转到登录页
+                    window.location.href = 'index.html';
+                });
+                console.log("退出按钮事件已手动绑定");
+            } else {
+                console.error("未找到退出按钮");
+            }
+        });
+    </script>
+</body>
+</html>

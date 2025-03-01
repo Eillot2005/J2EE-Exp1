@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习内容</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/study.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../js/main.js"></script>
+    <script src="../js/study.js"></script>
+</head>
+<body>
+    <header>
+        <h1>学习内容</h1>
+        <!-- 添加用户信息和退出按钮 -->
+        <div class="user-info">
+            欢迎，<span id="currentUser"></span>
+            <button class="logout" onclick="logout()">退出登录</button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="study-grid">
+            <!-- 左侧：学习进度 -->
+            <div class="study-progress">
+                <h2>我的学习进度</h2>
+                
+                <div class="study-category">
+                    <h3><i class="fas fa-laptop-code"></i> 前端开发</h3>
+                    <p>HTML</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%">80%</div>
+                    </div>
+                    
+                    <p>CSS</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%">50%</div>
+                    </div>
+                    
+                    <p>JavaScript</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 10%">10%</div>
+                    </div>
+                </div>
+                
+                <div class="study-category">
+                    <h3><i class="fas fa-server"></i> 后端开发</h3>
+                    <p>Java</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%">85%</div>
+                    </div>
+                    
+                    <p>SpringBoot框架</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%">0%</div>
+                    </div>
+                    
+                    <p>数据库</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%">80%</div>
+                    </div>
+                </div>
+
+                <div class="study-category">
+                    <h3><i class="fas fa-brain"></i> 计算机基础</h3>
+                    <p>数据结构与算法</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%">60%</div>
+                    </div>
+                    
+                    <p>计算机网络</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%">40%</div>
+                    </div>
+                    
+                    <p>操作系统</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%">30%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧：当前学习课程 -->
+            <div class="study-courses">
+                <h2>当前学习课程</h2>
+                <ol class="study-list">
+                    <li>
+                        <h3>Web前端开发基础</h3>
+                        <p>学习HTML、CSS和JavaScript的基础知识，掌握网页布局和样式设计技巧，能够独立开发简单的网页。</p>
+                        <div class="course-meta">
+                            <span class="course-progress"><i class="fas fa-tasks"></i> 第1周/共2周</span>
+                            <span class="course-status in-progress">进行中</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <h3>后端开发基础</h3>
+                        <p>学习Java语言和SpringBoot框架的基础知识，掌握数据库设计和操作技术，能够开发简单的Web应用。</p>
+                        <div class="course-meta">
+                            <span class="course-progress"><i class="fas fa-tasks"></i> 第0周/共8周</span>
+                            <span class="course-status planned">计划中</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <h3>算法设计与分析</h3>
+                        <p>学习常见算法的设计思想和实现方法，提升编程能力和解决问题的能力。</p>
+                        <div class="course-meta">
+                            <span class="course-progress"><i class="fas fa-tasks"></i> 第1周/共8周</span>
+                            <span class="course-status in-progress">进行中</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <h3>软件工程与项目管理</h3>
+                        <p>学习软件开发流程、需求分析、系统设计和项目管理知识，提升团队协作能力。</p>
+                        <div class="course-meta">
+                            <span class="course-progress"><i class="fas fa-tasks"></i> 第0周/共8周</span>
+                            <span class="course-status planned">计划中</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h3>Python与大数据分析</h3>
+                        <p>学习Python编程语言和大数据分析技术，掌握数据处理和可视化方法，提升数据分析能力。</p>
+                        <div class="course-meta">
+                            <span class="course-progress"><i class="fas fa-tasks"></i> 第0周/共7周</span>
+                            <span class="course-status planned">计划中</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="study-note">
+            <h2>学习笔记</h2>
+            <div class="note-description">
+                <p>这里收集了我的学习笔记文件，点击文件图标可直接打开查看。</p>
+            </div>
+            
+            <div class="files-container">
+                <!-- PDF文件 - 直接链接到文件 -->
+                <div class="file-item pdf">
+                    <a href="../files/HTML CSS JavaScript上机实验手.pdf" target="_blank" class="file-link" title="HTML CSS JavaScript上机实验手.pdf"">
+                        <div class="file-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="file-name">HRML CSS JavaScript上机实验手.pdf</div>
+                        <div class="file-info">908 KB · 2012/5/20</div>
+                    </a>
+                </div>
+                
+                <div class="file-item pdf">
+                    <a href="../files/《深度学习入门：基于Python的理论与实现》高清中文版.pdf" target="_blank" class="file-link" title="《深度学习入门：基于Python的理论与实现》高清中文版.pdf">
+                        <div class="file-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="file-name">《深度学习入门：基于Python的理论与实现》高清中文版.pdf</div>
+                        <div class="file-info">10.7 MB · 2018/7/16</div>
+                    </a>
+                </div>
+                
+                <!-- Word文档 -->
+                <div class="file-item pdf">
+                    <a href="../files/《神经网络与深度学习——基于TensorFlow框架和Python技术实现》.pdf" target="_blank" class="file-link" title="《神经网络与深度学习——基于TensorFlow框架和Python技术实现》.pdf">
+                        <div class="file-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="file-name">《神经网络与深度学习——基于TensorFlow框架和Python技术实现》.pdf</div>
+                        <div class="file-info">3.57 MB · 2019/4/11</div>
+                    </a>
+                </div>
+                
+                <!-- PPT文件 -->
+                <div class="file-item pdf">
+                    <a href="../files/数据结构.pdf" target="_blank" class="file-link" title="数据结构.ppt">
+                        <div class="file-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="file-name">数据结构.ppt</div>
+                        <div class="file-info">1.71 MB · 2025/2/19</div>
+                    </a>
+                </div>
+                
+                <!-- 代码文件 -->
+                <div class="file-item pdf">
+                    <a href="../files/机器学习 周志华PDF.pdf" target="_blank" class="file-link" title="机器学习 周志华PDF.pdf">
+                        <div class="file-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="file-name">机器学习 周志华PDF.pdf</div>
+                        <div class="file-info">85.7 MB · 2016/2/22</div>
+                    </a>
+                </div>
+
+                <!-- 代码文件 -->
+                <div class="file-item pdf">
+                    <a href="../files/深度学习.pdf" target="_blank" class="file-link" title="深度学习.pdf">
+                        <div class="file-icon">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="file-name">深度学习.pdf</div>
+                        <div class="file-info">43.1 MB · 2021/7/22</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="main.html" class="back-button">返回主页</a>
+    
+    <footer>
+        <p>&copy; 2025 我的个人网站. 保留所有权利.</p>
+    </footer>
+
+    <script>
+        // 页面加载时检查登录状态
+        document.addEventListener('DOMContentLoaded', function() {
+            // ...existing code...
+        });
+    </script>
+</body>
+</html>

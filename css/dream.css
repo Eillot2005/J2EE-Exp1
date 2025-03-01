@@ -1,0 +1,213 @@
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* 为绝对定位的.user-info提供定位上下文 */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+h2 {
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+/* 添加列表样式, 去除默认列表样式 */
+.dream-list {
+    list-style-type: none;
+    padding: 0;
+}
+/* 和dream-list的li元素一起使用, 使列表项具有卡片效果 */
+.dream-list li {
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* 为什么没有hover效果?因为没有设置:hover伪类 */
+.dream-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* 为列表项的标题设置样式 */
+.dream-list h2 {
+    color: #4CAF50;
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 5px;
+}
+
+.dream-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+/*这里加上th和td的意思是th和td都会应用这个样式*/
+.dream-table th, .dream-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+/* 表头样式 */
+.dream-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+/*nth-child(even)选择器选择偶数行*/
+.dream-table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+/* 鼠标悬停时的背景色 */
+.dream-table tr:hover {
+    background-color: #fff1f1;
+}
+
+.back-button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.back-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+.progress-cell {
+    position: relative;
+}
+
+.progress-indicator {
+    display: inline-block;/* 设置行内块元素 */
+    padding: 5px 10px;/* 设置内边距 */
+    border-radius: 15px;/* 设置圆角 */
+    font-size: 0.85em;/* 设置字体大小 */
+    color: white;
+}
+
+.finished {
+    background-color: #4caf5b;
+}
+
+.in-progress {
+    background-color: #2196F3;
+}
+
+.planned {
+    background-color: #FF9800;
+}
+
+.not-started {
+    background-color: #9E9E9E;
+}
+
+.description-text {
+    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* 添加用户信息样式 */
+.user-info {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info span {
+    font-weight: bold;
+}
+
+.logout {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+/* 为JS启用的动画添加样式 */
+.js-enabled .dream-table {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* 返回按钮点击效果 */
+.back-button.clicked {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 确保表格行可以应用动画 */
+.dream-table tr {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 为移动设备优化动画 */
+@media (prefers-reduced-motion: reduce) {
+    .dream-list li, .dream-table tr {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

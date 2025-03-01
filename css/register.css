@@ -1,0 +1,181 @@
+body{
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../images/login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.register-container{
+    width: 450px;
+    height: auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    margin: 20px 0;
+}
+
+h1{
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    margin-top: auto;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+label{/*输入框前面的文字的样式*/
+    display: block;
+    font-size: 1em;
+    color: #000000;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-weight: bold;
+}
+/*输入框的样式*/
+input, select, textarea {
+    width: 100%;/*输入框的宽度*/
+    padding: 10px 12px;/*输入框的内边距*/
+    border: 1px solid #ccc;
+    border-radius: 5px;/*输入框的圆角*/
+    font-size: 15px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+/*输入框的样式,和上面不同的是这个是获得焦点时的样式，意思是当输入框获得焦点时，边框颜色变为绿色*/
+input:focus, select:focus, textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
+.btn{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 0 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: #45a049;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(69, 160, 73, 0.5);
+}
+
+.login-link{
+    text-align: center;
+    margin-top: 20px;
+}
+.login-link a{
+    text-decoration:underline;/*无下划线*/
+    color: #555;
+    font-weight: bold;
+}
+.login-link a:hover{
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);/*3个参数分别是x轴偏移量，y轴偏移量，模糊半径*/
+}
+
+/* 单选和复选框样式优化 */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+.radio-item, .checkbox-item {
+    display: flex;/*flex布局,就是让子元素在父元素中均匀分布*/
+    align-items: center;/*垂直居中*/
+    gap: 5px;/*元素之间的间隔*/
+}
+/*单选和复选框的样式*/
+.radio-item input, .checkbox-item input {
+    width: auto;
+    margin-left: 10px;
+}
+/*单选和复选框的样式*/
+.radio-item label, .checkbox-item label {
+    display: inline;/*行内元素*/
+    font-weight: normal;/*字体粗细*/
+    margin: 0;/*外边距*/
+}
+
+/* 错误提示样式 */
+.error-message {
+    color: #e53935;
+    font-size: 13px;
+    display: block;
+    margin-top: 3px;
+    min-height: 18px;
+}
+.ok-message{
+    color: #4CAF50;
+    font-size: 13px;/*字体大小*/
+    display: block;
+    margin-top: 3px;/*上边距*/
+    min-height: 18px;/*最小高度*/
+}
+
+input.error, select.error, textarea.error {
+    border-color: #e53935;
+}
+
+input.valid, select.valid, textarea.valid {
+    border-color: #4CAF50;
+}
+
+/* 其他爱好输入框 */
+.other-hobby {
+    display: none;
+    margin-top: 10px;
+}
+
+/* 必填项标记 */
+.required {
+    color: #e53935;
+    margin-left: 3px;
+}
+
+/* 响应式调整，当屏幕宽度小于500px时，登录框宽度调整为90% */
+@media (max-width: 500px) {
+    .register-container {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}

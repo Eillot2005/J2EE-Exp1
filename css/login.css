@@ -1,0 +1,124 @@
+/*body是整个页面的背景颜色，字体，边距等*/
+body {
+    font-family: Arial, sans-serif;/*字体*/
+    background-color: #f4f4f4;/*背景颜色*/
+    margin: 0;/*边距*/
+    padding: 0;/*边距*/
+    display: flex;
+    justify-content: center;/*水平居中*/
+    align-items: center;/*垂直居中*/
+    height: 100vh;/*100%的视口高度*/
+    background-image: url("../images/login.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*login-container是登录框的样式*/
+.login-container {
+    background-color: rgba(245, 245, 245, 0.9); /* 略微透明的白色背景 */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px); /*background-color的模糊效果*/
+}
+/*login-container:hover是鼠标悬停在登录框上的样式*/
+.login-container:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+h1 {
+    text-align: center;/*文字居中*/
+    color: #333;/*文字颜色*/
+    margin-bottom: 30px;/*下边距*/
+    margin-top: auto;
+}
+/*label是输入框前面的文字的样式*/
+label {
+    display: block;/*块级元素*/
+    font-size: 1em;/*字体大小*/
+    color: #000000;
+    margin-bottom: 5px;/*下边距*/
+    font-weight:bold;
+
+}
+/*input是输入框的样式*/
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 错误输入框样式 */
+input.error {
+    border-color: #e53935;
+}
+
+/* 添加错误信息容器样式 */
+.error-container {
+    color: #e53935;
+    background-color: rgba(229, 57, 53, 0.1);
+    border: 1px solid #e53935;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+/* 添加记住我选项样式（如果需要） */
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 8px;
+}
+
+.remember-me label {
+    display: inline;
+    font-weight: normal;
+}
+
+.btn{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;/*上下边距，左右边距*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;/*行内块元素*/
+    font-size: 16px;/*字体大小*/
+    margin-top: 30px;
+    cursor: pointer;/*鼠标样式*/
+    border-radius: 20px;
+    width: 100%;
+    transition: all 0.3s ease;/*所有属性变化都有0.3s的过渡时间*/
+}
+.btn:hover{
+    background-color: #45a049;
+    transform: scale(1.02);
+    box-shadow:#45a049 0px 0px 5px;/*后面3个参数分别是x轴偏移量，y轴偏移量，模糊半径*/
+}
+
+.register-link{
+    text-align: center;
+    margin-top: 20px;
+}
+.register-link a{
+    text-decoration:underline;/*无下划线*/
+    color: #555;
+    font-weight: bold;
+}
+.register-link a:hover{
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);/*3个参数分别是x轴偏移量，y轴偏移量，模糊半径*/
+}

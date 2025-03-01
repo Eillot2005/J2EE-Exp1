@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的理想</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/dream.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 添加 main.js 引用，确保登录状态检查 -->
+    <script src="../js/main.js"></script>
+    <script src="../js/dream.js"></script>
+</head>
+<body>
+    <header>
+        <h1>我的理想</h1>
+        <!-- 添加用户信息和退出按钮 -->
+        <div class="user-info">
+            欢迎，<span id="currentUser"></span>
+            <button class="logout" onclick="logout()">退出登录</button>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>短期目标与长期理想</h2>
+        <p class="description-text">以下是我在不同时间节点设定的目标和为实现这些目标准备采取的行动</p>
+        
+        <table class="dream-table">
+            <tr>
+                <th>时间节点</th>
+                <th>目标/理想</th>
+                <th>实现途径</th>
+                <th>进度</th>
+            </tr>
+            <tr>
+                <td>2023-2024</td>
+                <td>学习计算机语言和算法</td>
+                <td>参加课程，学习编程基础</td>
+                <td class="progress-cell"><span class="progress-indicator finished">已完成</span></td>
+            </tr>
+            <tr>
+                <td>2025</td>
+                <td>学习框架，学习人工智能</td>
+                <td>学习前端和后端框架，学习人工智能基础</td>
+                <td class="progress-cell"><span class="progress-indicator in-progress">进行中</span></td>
+            </tr>
+            <tr>
+                <td>2026-2027</td>
+                <td>考取研究生</td>
+                <td>进一步提升自己的能力
+                <td class="progress-cell"><span class="progress-indicator planned">计划中</span></td>
+            </tr>
+            <tr>
+                <td>2027-2030</td>
+                <td>攻读研究生</td>
+                <td>深入研究人工智能领域，取得硕士学位</td>
+                <td class="progress-cell"><span class="progress-indicator planned">计划中</span></td>
+            </tr>
+            <tr>
+                <td>2030-2040</td>
+                <td>努力工作，争取转管理</td>
+                <td>积累工作经验，提升管理能力</td>
+                <td class="progress-cell"><span class="progress-indicator not-started">未开始</span></td>
+            </tr>
+            <tr>
+                <td>2040-2060</td>
+                <td>积攒财富，享受生活</td>
+                <td>为退休积攒财富，享受生活</td>
+                <td class="progress-cell"><span class="progress-indicator not-started">未开始</span></td>
+            </tr>
+        </table>
+        
+        <h2>我的理想清单</h2>
+        
+        <ul class="dream-list">
+            <li>
+                <h2>职业理想</h2>
+                <p>成为一名优秀的软件工程师，开发出有价值的产品，解决实际问题。</p>
+            </li>
+            
+            <li>
+                <h2>学习理想</h2>
+                <p>保持终身学习的态度，不断探索新技术。希望能取得计算机科学硕士学位，深入研究人工智能领域。</p>
+            </li>
+            
+            <li>
+                <h2>生活理想</h2>
+                <p>保持健康的生活方式。希望能周游世界，体验不同的文化，记录生活的精彩瞬间。</p>
+            </li>
+            
+            <li>
+                <h2>社会贡献</h2>
+                <p>利用技术为社会做出积极贡献，参与开源项目，开发解决实际社会问题的应用。帮助更多人通过技术改变生活。</p>
+            </li>
+        </ul>
+    </div>
+    
+    <a href="main.html" class="back-button">返回主页</a>
+    
+    <footer>
+        <p>&copy; 2025 我的个人网站. 保留所有权利.</p>
+    </footer>
+
+    <script>
+        // 页面加载时检查登录状态
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查是否登录，未登录则跳转
+            if (!window.isLoggedIn || !window.isLoggedIn()) {
+                alert('请先登录');
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // 展示用户信息
+            if (window.displayUserInfo) {
+                window.displayUserInfo();
+            }
+            
+            // 确保退出按钮功能正常
+            const logoutBtn = document.querySelector('.logout');
+            if (logoutBtn && window.logout) {
+                logoutBtn.addEventListener('click', window.logout);
+            }
+        });
+    </script>
+</body>
+</html>

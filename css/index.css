@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/boy.jpg");
+  font-family: "Arial", sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter:blur(10px)
+}
+
+.welcome {
+  text-align:center;
+  color: #000000;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  height: auto;
+  transform: translateY(-100px);
+}
+.welcome h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+.welcome p {
+  font-size: 2rem;
+}
+.hint {
+  font-size: 10%;
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  animation: bounce 1.5s infinite;
+}
+
+.hint p{
+  font-size: 2em;
+}
+
+@keyframes bounce {
+  0%,
+  50% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

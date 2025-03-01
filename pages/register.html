@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>注册</h1>
+        <form id="registerForm" action="" method="post" novalidate>
+            <div class="form-group">
+                <label for="username">用户名 <span class="required">*</span></label><!--span标签用于设置字体样式-->
+                <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                <span class="error-message" id="username-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">密码 <span class="required">*</span></label>
+                <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                <span class="error-message" id="password-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">确认密码 <span class="required">*</span></label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请再次输入密码" required>
+                <span class="error-message" id="confirmPassword-error"></span><span class="ok-message" id="confirmPassword-ok"></span>
+            </div>
+            <div class="form-group">
+                <label>性别 <span class="required">*</span></label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">男</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">女</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="otherGender" name="gender" value="other">
+                        <label for="otherGender">其他</label>
+                </div>
+                <span class="error-message" id="gender-error"></span>
+            </div>
+            <div class="form-group">
+                <label>兴趣爱好</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="reading" name="hobbies" value="reading">
+                        <label for="reading">阅读</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sports" name="hobbies" value="sports">
+                        <label for="sports">运动</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="music" name="hobbies" value="music">
+                        <label for="music">音乐</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="photography" name="hobbies" value="photography">
+                        <label for="photography">摄影</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="other" name="hobbies" value="other">
+                        <label for="other">其他</label>
+                    </div>
+                </div>
+                <div class="other-hobby">
+                    <input type="text" id="otherHobby" name="otherHobby" placeholder="请说明其他兴趣爱好">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="education">学历 <span class="required">*</span></label>
+                <select id="education" name="education" required>
+                    <option value="">请选择学历</option>
+                    <option value="highschool">高中</option>
+                    <option value="college">大专</option>
+                    <option value="bachelor">本科</option>
+                    <option value="master">硕士</option>
+                    <option value="doctor">博士</option>
+                </select>
+                <span class="error-message" id="education-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="introduction">自我介绍</label>
+                <textarea id="introduction" name="introduction" rows="4" placeholder="请输入自我介绍"></textarea>
+            </div>
+            <button type="submit" class="btn">注册</button>
+        </form>
+        <div class="login-link">
+            已有账号？<a href="index.html">立即登录</a>
+        </div>
+    </div>
+    <script src="../js/register.js"></script>
+</body>
+</html>

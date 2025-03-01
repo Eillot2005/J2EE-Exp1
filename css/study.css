@@ -1,0 +1,351 @@
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* 为用户信息提供定位上下文 */
+}
+
+/* 用户信息样式 */
+.user-info {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info span {
+  font-weight: bold;
+}
+
+.logout {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout:hover {
+  background-color: #c0392b;
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+
+/* 两栏网格布局 */
+.study-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* 左边占比更小一些 */
+  gap: 30px;
+}
+
+/* 适应移动设备的媒体查询 */
+@media (max-width: 768px) {
+  .study-grid {
+    grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
+  }
+}
+
+h2 {
+  color: #4caf50;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #2196F3;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h3 i {
+  color: #2196F3;
+}
+
+/* 左侧：学习进度样式 */
+.study-progress {
+  padding-right: 20px;
+}
+
+.study-category {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.study-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  background-color: #eee;
+  height: 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden; /* 确保进度条内容不溢出 */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+  background-color: #4caf50;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: white;
+  font-size: 14px;
+  transition: width 1s ease-in-out; /* 添加动画效果 */
+}
+
+/* 右侧：课程列表样式 */
+.study-courses {
+  padding-left: 20px;
+  border-left: 1px solid #eee;
+}
+
+.study-list {
+  counter-reset: study-counter;
+  padding-left: 0;
+  list-style: none;
+}
+
+.study-list li {
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  position: relative;
+  counter-increment: study-counter;
+  padding-left: 60px;
+  border-left: 4px solid #4caf50;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.study-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.study-list li::before {
+  content: counter(study-counter);
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 12px;
+  top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 课程状态标签 */
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.course-progress {
+  font-weight: bold;
+  color: #555;
+}
+
+.course-status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  color: white;
+}
+
+.in-progress {
+  background-color: #2196F3;
+}
+
+.planned {
+  background-color: #FF9800;
+}
+
+.completed {
+  background-color: #4CAF50;
+}
+
+.back-button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.back-button:hover {
+  background-color: #45a049;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+}
+
+.study.note{
+    color: #4CAF50;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+
+/* 学习笔记部分样式 */
+.study-note {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.note-description {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* 文件容器 */
+.files-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* 文件项样式 */
+.file-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  /* 添加CSS变量用于动态设置颜色 */
+  --file-color: #FF5722; /* 默认颜色，会被JS覆盖 */
+}
+
+.file-item:hover {
+  transform: translateY(-5px) !important;/* 重写样式，避免被其他样式覆盖 */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  /*颜色加深*/
+  filter: brightness(0.9);/* 亮度增加5% */
+}
+
+/* 使用CSS变量设置颜色 */
+.file-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--file-color); /*var()函数引用CSS变量, 用于动态设置颜色*/
+}
+
+/* 文件图标 - 颜色会由JS设置 */
+.file-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 文件名称 */
+.file-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 文件信息 */
+.file-info {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* 文件链接样式 */
+.file-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .files-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .files-container {
+    grid-template-columns: 1fr;
+  }
+}
