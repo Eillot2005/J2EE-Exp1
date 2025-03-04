@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游地图展示</title>
+    <link rel="stylesheet" href="../css/map.css">
+</head>
+<body>
+    <div class="container">
+        <div class="back">
+            <button onclick="window.location.href='life.html'">返回</button>
+        </div>
+        <h1>旅游风景展示</h1>
+        <div class="map-container">
+            <img src="../images/china-map.png" alt="中国地图" class="china-map" id="china-map">
+            
+            <!-- 三个城市的标记点 -->
+            <div class="city-marker wuhan" data-city="wuhan" title="武汉"></div>
+            <div class="city-marker nanjing" data-city="nanjing" title="南京"></div>
+            <div class="city-marker changsha" data-city="changsha" title="长沙"></div>
+            <div class="city-marker dali" data-city="dali" title="大理"></div>
+            <div class="city-marker luoyang" data-city="luoyang" title="洛阳"></div>
+        </div>
+        
+        <div class="city-info">
+            <h2 id="city-name">点击地图上的红点查看城市风景</h2>
+            <div class="city-image-container">
+                <!-- 添加图片导航箭头 -->
+                <a href="#" class="image-nav-btn prev" id="prev-btn">&lt;</a>
+                <img id="city-image" src="" alt="城市风景">
+                <a href="#" class="image-nav-btn next" id="next-btn">&gt;</a>
+            </div>
+            
+            <!-- 添加导航指示点 -->
+            <div id="image-nav" class="image-navigation"></div>
+            
+            <p id="city-description"></p>
+        </div>
+    </div>
+    
+    <script src="../js/map.js"></script>
+    <script>
+        document.getElementById('china-map').onload = function() {
+            setTimeout(function() {
+                const mapWidth = document.querySelector('.map-container').offsetWidth;
+                const mapHeight = document.querySelector('.map-container').offsetHeight;
+            
+                console.log(`地图尺寸: ${mapWidth} x ${mapHeight}`);
+            }, 500);
+        };
+    </script>
+</body>
+</html>

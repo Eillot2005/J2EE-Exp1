@@ -7,18 +7,12 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/dream.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- 添加 main.js 引用，确保登录状态检查 -->
     <script src="../js/main.js"></script>
     <script src="../js/dream.js"></script>
 </head>
 <body>
     <header>
         <h1>我的理想</h1>
-        <!-- 添加用户信息和退出按钮 -->
-        <div class="user-info">
-            欢迎，<span id="currentUser"></span>
-            <button class="logout" onclick="logout()">退出登录</button>
-        </div>
     </header>
     
     <div class="container">
@@ -100,28 +94,5 @@
     <footer>
         <p>&copy; 2025 我的个人网站. 保留所有权利.</p>
     </footer>
-
-    <script>
-        // 页面加载时检查登录状态
-        document.addEventListener('DOMContentLoaded', function() {
-            // 检查是否登录，未登录则跳转
-            if (!window.isLoggedIn || !window.isLoggedIn()) {
-                alert('请先登录');
-                window.location.href = 'index.html';
-                return;
-            }
-            
-            // 展示用户信息
-            if (window.displayUserInfo) {
-                window.displayUserInfo();
-            }
-            
-            // 确保退出按钮功能正常
-            const logoutBtn = document.querySelector('.logout');
-            if (logoutBtn && window.logout) {
-                logoutBtn.addEventListener('click', window.logout);
-            }
-        });
-    </script>
 </body>
 </html>

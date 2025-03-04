@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ebf1f2;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align:center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #2c3e50;
+    margin-left:100px;
+}
+
+.map-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 600px; /* 减小地图容器尺寸 */
+    height: 450px; /* 设置固定高度 */
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.china-map {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 保持地图比例 */
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 城市标记点样式 */
+.city-marker {
+    position: absolute;
+    width: 16px; /* 稍微减小点的大小 */
+    height: 16px;
+    background-color: red;
+    border: 3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 10; /* 确保点在地图上层 */
+}
+
+.city-marker:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+/* 武汉位置 */
+.wuhan {
+    top: 62%;
+    left: 68%;
+}
+
+/* 南京位置 */
+.nanjing {
+    top: 57%;
+    left: 77%;
+}
+
+/* 长沙位置 */
+.changsha {
+    top: 68%;
+    left: 66%;
+}
+
+.luoyang{
+    top: 53%;
+    left: 64%;
+}
+
+.dali{
+    top: 80%;
+    left: 43%;
+}
+
+/* 城市信息区域 */
+.city-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* 图片容器样式修改 */
+.city-image-container {
+    margin: 20px 0;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    position: relative; /* 为导航按钮定位做准备 */
+}
+
+#city-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: opacity 0.5s ease; /* 添加过渡效果 */
+}
+
+/* 导航按钮样式 */
+.image-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.image-nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* 图片导航点样式 */
+.image-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-dot.active {
+    background-color: #333;
+    transform: scale(1.2);
+}
+
+.nav-dot:hover {
+    background-color: #888;
+}
+
+.back{
+    color: white;
+    /*位于右边*/
+    float: right;
+}
+
+.back button{
+    background-color: #48b34b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s;
+}
+
+.back button:hover{
+    background-color: #368b39;
+}

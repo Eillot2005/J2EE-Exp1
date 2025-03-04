@@ -16,35 +16,6 @@ header {
   position: relative; /* 为用户信息提供定位上下文 */
 }
 
-/* 用户信息样式 */
-.user-info {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.user-info span {
-  font-weight: bold;
-}
-
-.logout {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.logout:hover {
-  background-color: #c0392b;
-}
-
 .container {
   width: 95%;
   max-width: 1200px;
@@ -60,13 +31,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1.5fr; /* 左边占比更小一些 */
   gap: 30px;
-}
-
-/* 适应移动设备的媒体查询 */
-@media (max-width: 768px) {
-  .study-grid {
-    grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
-  }
 }
 
 h2 {
@@ -127,7 +91,7 @@ h3 i {
   padding-right: 10px;
   color: white;
   font-size: 14px;
-  transition: width 1s ease-in-out; /* 添加动画效果 */
+  transition: width 1s ease-in-out;
 }
 
 /* 右侧：课程列表样式 */
@@ -177,7 +141,6 @@ h3 i {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 课程状态标签 */
 .course-meta {
   display: flex;
   justify-content: space-between;
@@ -247,7 +210,6 @@ footer {
     margin: 0 0 8px 0;
 }
 
-/* 学习笔记部分样式 */
 .study-note {
   margin-top: 40px;
   padding-top: 20px;
@@ -259,7 +221,6 @@ footer {
   color: #666;
 }
 
-/* 文件容器 */
 .files-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -267,7 +228,6 @@ footer {
   margin-top: 20px;
 }
 
-/* 文件项样式 */
 .file-item {
   background-color: #fff;
   border-radius: 8px;
@@ -280,9 +240,8 @@ footer {
 }
 
 .file-item:hover {
-  transform: translateY(-5px) !important;/* 重写样式，避免被其他样式覆盖 */
+  transform: translateY(-5px) !important;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  /*颜色加深*/
   filter: brightness(0.9);/* 亮度增加5% */
 }
 
@@ -335,17 +294,4 @@ footer {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .files-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .files-container {
-    grid-template-columns: 1fr;
-  }
 }

@@ -32,12 +32,12 @@ h2 {
     padding-bottom: 10px;
     margin-top: 30px;
 }
-/* 添加列表样式, 去除默认列表样式 */
+
 .dream-list {
     list-style-type: none;
     padding: 0;
 }
-/* 和dream-list的li元素一起使用, 使列表项具有卡片效果 */
+
 .dream-list li {
     margin-bottom: 30px;
     padding: 10px;
@@ -47,9 +47,8 @@ h2 {
     box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* 为什么没有hover效果?因为没有设置:hover伪类 */
+
 .dream-list li:hover {
-    transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 /* 为列表项的标题设置样式 */
@@ -68,7 +67,7 @@ h2 {
     border-radius: 8px;
     overflow: hidden;
 }
-/*这里加上th和td的意思是th和td都会应用这个样式*/
+
 .dream-table th, .dream-table td {
     border: 1px solid #ddd;
     padding: 15px;
@@ -83,11 +82,11 @@ h2 {
     font-size: 0.9em;
     letter-spacing: 1px;
 }
-/*nth-child(even)选择器选择偶数行*/
+
 .dream-table tr:nth-child(even) {
     background-color: #f7f7f7;
 }
-/* 鼠标悬停时的背景色 */
+
 .dream-table tr:hover {
     background-color: #fff1f1;
 }
@@ -157,57 +156,12 @@ footer {
     font-style: italic;
 }
 
-/* 添加用户信息样式 */
-.user-info {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.user-info span {
-    font-weight: bold;
-}
-
-.logout {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.logout:hover {
-    background-color: #c0392b;
-}
-
-/* 为JS启用的动画添加样式 */
 .js-enabled .dream-table {
     opacity: 1;
     transition: opacity 0.5s ease;
 }
 
-/* 返回按钮点击效果 */
 .back-button.clicked {
-    transform: scale(0.95);
+    transform: scale(0.90);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* 确保表格行可以应用动画 */
-.dream-table tr {
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* 为移动设备优化动画 */
-@media (prefers-reduced-motion: reduce) {
-    .dream-list li, .dream-table tr {
-        transition: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
 }

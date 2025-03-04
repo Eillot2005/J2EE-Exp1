@@ -44,7 +44,7 @@ h1{
     position: relative;
 }
 
-label{/*输入框前面的文字的样式*/
+label{
     display: block;
     font-size: 1em;
     color: #000000;
@@ -52,7 +52,7 @@ label{/*输入框前面的文字的样式*/
     font-weight: 500;
     font-weight: bold;
 }
-/*输入框的样式*/
+
 input, select, textarea {
     width: 100%;/*输入框的宽度*/
     padding: 10px 12px;/*输入框的内边距*/
@@ -62,7 +62,7 @@ input, select, textarea {
     transition: border-color 0.3s;
     box-sizing: border-box;
 }
-/*输入框的样式,和上面不同的是这个是获得焦点时的样式，意思是当输入框获得焦点时，边框颜色变为绿色*/
+
 input:focus, select:focus, textarea:focus {
     border-color: #4CAF50;
     outline: none;
@@ -106,7 +106,7 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);/*3个参数分别是x轴偏移量，y轴偏移量，模糊半径*/
 }
 
-/* 单选和复选框样式优化 */
+
 .radio-group, .checkbox-group {
     display: flex;
     flex-wrap: wrap;
@@ -119,19 +119,19 @@ input:focus, select:focus, textarea:focus {
     align-items: center;/*垂直居中*/
     gap: 5px;/*元素之间的间隔*/
 }
-/*单选和复选框的样式*/
+
 .radio-item input, .checkbox-item input {
     width: auto;
     margin-left: 10px;
 }
-/*单选和复选框的样式*/
+
 .radio-item label, .checkbox-item label {
     display: inline;/*行内元素*/
     font-weight: normal;/*字体粗细*/
     margin: 0;/*外边距*/
 }
 
-/* 错误提示样式 */
+
 .error-message {
     color: #e53935;
     font-size: 13px;

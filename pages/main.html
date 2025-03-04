@@ -102,35 +102,6 @@
             </div>
         </main>
     </div>
-
-    <script>
-        // 调试信息
-        console.log("main.html 页面加载");
-        
-        // 检查全局函数是否存在
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("DOM加载完成");
-            console.log("logout函数存在:", typeof window.logout === "function");
-            console.log("用户登录状态:", localStorage.getItem('isLoggedIn'));
-
-            // 直接绑定退出按钮事件，确保可用
-            const logoutBtn = document.querySelector('.logout');
-            if (logoutBtn) {
-                logoutBtn.addEventListener('click', function() {
-                    console.log("退出按钮被点击");
-                    // 清除登录状态
-                    localStorage.removeItem('isLoggedIn');
-                    localStorage.removeItem('username');
-                    // 提示用户已退出
-                    alert('您已成功退出登录');
-                    // 跳转到登录页
-                    window.location.href = 'index.html';
-                });
-                console.log("退出按钮事件已手动绑定");
-            } else {
-                console.error("未找到退出按钮");
-            }
-        });
     </script>
 </body>
 </html>

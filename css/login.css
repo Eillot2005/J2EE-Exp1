@@ -1,4 +1,3 @@
-/*body是整个页面的背景颜色，字体，边距等*/
 body {
     font-family: Arial, sans-serif;/*字体*/
     background-color: #f4f4f4;/*背景颜色*/
@@ -13,7 +12,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-/*login-container是登录框的样式*/
+
 .login-container {
     background-color: rgba(245, 245, 245, 0.9); /* 略微透明的白色背景 */
     padding: 40px;
@@ -25,7 +24,7 @@ body {
     transition: all 0.3s ease;
     backdrop-filter: blur(5px); /*background-color的模糊效果*/
 }
-/*login-container:hover是鼠标悬停在登录框上的样式*/
+
 .login-container:hover {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
@@ -35,7 +34,7 @@ h1 {
     margin-bottom: 30px;/*下边距*/
     margin-top: auto;
 }
-/*label是输入框前面的文字的样式*/
+
 label {
     display: block;/*块级元素*/
     font-size: 1em;/*字体大小*/
@@ -44,7 +43,7 @@ label {
     font-weight:bold;
 
 }
-/*input是输入框的样式*/
+
 input {
     width: 100%;
     padding: 10px;
@@ -53,12 +52,10 @@ input {
     border-radius: 5px;
 }
 
-/* 错误输入框样式 */
 input.error {
     border-color: #e53935;
 }
 
-/* 添加错误信息容器样式 */
 .error-container {
     color: #e53935;
     background-color: rgba(229, 57, 53, 0.1);
@@ -71,7 +68,6 @@ input.error {
     display: none;
 }
 
-/* 添加记住我选项样式（如果需要） */
 .remember-me {
     display: flex;
     align-items: center;

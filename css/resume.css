@@ -41,12 +41,6 @@ header {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-    .resume-box {
-        width: 100%;
-    }
-}
-
 .resume-box h2 {
     color: #4CAF50;
     border-bottom: 2px solid #4CAF50;
@@ -77,7 +71,6 @@ header {
 
 .profile-img:hover {
     transform: scale(1.15);
-    /* 优先级设为最高 */
 }
 
 .progress-bar {
@@ -97,7 +90,8 @@ header {
     justify-content: flex-end;
     padding-right: 10px;
     color: white;
-    transition: width 1.5s ease-in-out;
+    font-size: 14px;
+    transition: width 1s ease-in-out;
 }
 
 .back-button {
