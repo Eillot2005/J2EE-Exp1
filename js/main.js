@@ -45,6 +45,8 @@ function initPage() {
             e.preventDefault();
             if (confirm('确定要退出登录吗？')) {
                 logout();
+            }else{
+                alert('取消退出');
             }
         });
     }

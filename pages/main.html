@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- 确保 main.js 正确引入 -->
     <script src="../js/main.js"></script>
 </head>
 <body>
@@ -15,13 +14,12 @@
         <h1>我的个人网站</h1>
         <div class="user-info">
             欢迎，<span id="currentUser"></span>
-            <button class="logout" onclick="logout()">退出登录</button>
+            <button class="logout">退出登录</button>
         </div>
     </header>
     <div class="page-wrapper">
         <!-- 左侧边栏 -->
         <aside class="sidebar">
-            <!-- 个人资料卡片 -->
             <div class="profile-card">
                 <img src="../images/shanyi.jpg" alt="个人头像" class="avatar">
                 <h3 class="profile-name">刘逸潇</h3>
@@ -52,9 +50,7 @@
                 </div>
             </div>
             
-            <!-- 删除快速链接部分 -->
         </aside>
-        
         <!-- 右侧主内容区 -->
         <main class="main-content">
             <div class="welcome-section">

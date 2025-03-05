@@ -15,7 +15,6 @@
         <div class="map-container">
             <img src="../images/china-map.png" alt="中国地图" class="china-map" id="china-map">
             
-            <!-- 三个城市的标记点 -->
             <div class="city-marker wuhan" data-city="wuhan" title="武汉"></div>
             <div class="city-marker nanjing" data-city="nanjing" title="南京"></div>
             <div class="city-marker changsha" data-city="changsha" title="长沙"></div>
@@ -26,13 +25,11 @@
         <div class="city-info">
             <h2 id="city-name">点击地图上的红点查看城市风景</h2>
             <div class="city-image-container">
-                <!-- 添加图片导航箭头 -->
                 <a href="#" class="image-nav-btn prev" id="prev-btn">&lt;</a>
                 <img id="city-image" src="" alt="城市风景">
                 <a href="#" class="image-nav-btn next" id="next-btn">&gt;</a>
             </div>
             
-            <!-- 添加导航指示点 -->
             <div id="image-nav" class="image-navigation"></div>
             
             <p id="city-description"></p>
@@ -45,8 +42,6 @@
             setTimeout(function() {
                 const mapWidth = document.querySelector('.map-container').offsetWidth;
                 const mapHeight = document.querySelector('.map-container').offsetHeight;
-            
-                console.log(`地图尺寸: ${mapWidth} x ${mapHeight}`);
             }, 500);
         };
     </script>

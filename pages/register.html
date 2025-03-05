@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label for="confirmPassword">确认密码 <span class="required">*</span></label>
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请再次输入密码" required>
-                <span class="error-message" id="confirmPassword-error"></span><span class="ok-message" id="confirmPassword-ok"></span>
+                <span class="error-message" id="confirmPassword-error"></span>
             </div>
             <div class="form-group">
                 <label>性别 <span class="required">*</span></label>
@@ -69,6 +69,7 @@
                 </div>
                 <div class="other-hobby">
                     <input type="text" id="otherHobby" name="otherHobby" placeholder="请说明其他兴趣爱好">
+                    <span class="error-message" id="otherHobby-error"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -86,6 +87,17 @@
             <div class="form-group">
                 <label for="introduction">自我介绍</label>
                 <textarea id="introduction" name="introduction" rows="4" placeholder="请输入自我介绍"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="captcha">验证码 <span class="required">*</span></label>
+                <div class="captcha-container">
+                    <input type="text" id="captcha" name="captcha" placeholder="请输入验证码" required>
+                    <div class="captcha-image">
+                        <div class="captcha-text" id="captchaText"></div>
+                    </div>
+                </div>
+                <span class="error-message" id="captcha-error"></span>
+                <a href="javascript:void(0)" id="refreshCaptcha">看不清，换一张</a>
             </div>
             <button type="submit" class="btn">注册</button>
         </form>

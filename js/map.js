@@ -1,4 +1,3 @@
-// 城市数据 - 修改为多张照片数组
 const cityData = {
     wuhan: {
         name: "武汉",
@@ -63,18 +62,13 @@ let currentCity = null;
 let currentImageIndex = 0;
 let slideInterval = null;
 
-// 为每个城市标记点添加点击事件
 cityMarkers.forEach(marker => {
     marker.addEventListener('click', function() {
-        // 获取城市标识
         const city = this.getAttribute('data-city');
-        
         // 清除之前的自动轮播
         if (slideInterval) {
             clearInterval(slideInterval);
         }
-        
-        // 更新城市信息
         if (cityData[city]) {
             currentCity = city;
             currentImageIndex = 0;
@@ -89,7 +83,6 @@ cityMarkers.forEach(marker => {
     });
 });
 
-// 更新城市信息显示
 function updateCityInfo() {
     if (!currentCity) return;
     
@@ -100,23 +93,18 @@ function updateCityInfo() {
     cityImageElement.alt = `${city.name}风景`;
     cityDescriptionElement.textContent = city.description;
     
-    // 更新图片导航指示器
     updateNavigationDots();
 }
 
-// 开始图片轮播
 function startSlideshow() {
     if (slideInterval) {
         clearInterval(slideInterval);
     }
-    
-    // 每3秒自动切换到下一张
     slideInterval = setInterval(() => {
         nextImage();
     }, 2000);
 }
 
-// 显示下一张图片
 function nextImage() {
     if (!currentCity) return;
     
@@ -125,7 +113,6 @@ function nextImage() {
     updateCityInfo();
 }
 
-// 显示上一张图片
 function prevImage() {
     if (!currentCity) return;
     
@@ -142,7 +129,6 @@ function updateNavigationDots() {
     if (!currentCity) return;
     
     const images = cityData[currentCity].images;
-    
     // 创建导航点
     for (let i = 0; i < images.length; i++) {
         const dot = document.createElement('span');
@@ -150,7 +136,6 @@ function updateNavigationDots() {
         if (i === currentImageIndex) {
             dot.classList.add('active');
         }
-        
         // 添加点击事件，直接跳转到相应的图片
         dot.addEventListener('click', () => {
             currentImageIndex = i;
@@ -162,7 +147,6 @@ function updateNavigationDots() {
     }
 }
 
-// 重置轮播计时器
 function resetSlideshowTimer() {
     if (slideInterval) {
         clearInterval(slideInterval);
